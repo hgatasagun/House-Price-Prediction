@@ -1,5 +1,5 @@
 ##################################################################
-# # House Price Prediction Model
+# House Price Prediction Model
 #################################################################
 
 ## Problem Statement
@@ -27,11 +27,6 @@ from sklearn.metrics import r2_score
 
 from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
 from sklearn.neighbors import KNeighborsRegressor
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-from xgboost import XGBRegressor
-from lightgbm import LGBMRegressor
-from catboost import CatBoostRegressor
 
 from sklearn.model_selection import GridSearchCV, cross_validate
 
@@ -47,7 +42,7 @@ warnings.simplefilter("ignore")
 # TASK 1 - EXPLORATORY DATA ANALYSIS (EDA)
 ################################################
 
-# Step 1: Read and Combine Train and Test Datasets
+# Read and Combine Train and Test Datasets
 ##################################################
 data1 = pd.read_csv('/Users/handeatasagun/PycharmProjects/Case studies-Miuul/datasets/train_ev.csv')
 data2 = pd.read_csv('/Users/handeatasagun/PycharmProjects/Case studies-Miuul/datasets/test_ev.csv')
@@ -247,7 +242,7 @@ for col in num_cols:
 
 
 
-# Analyse Missing Values
+# Analyze Missing Values
 ########################
 def missing_values_table(dataframe, na_name=False):
     na_columns = [col for col in dataframe.columns if dataframe[col].isnull().sum() > 0]
@@ -505,8 +500,6 @@ df.head()
 df.shape
 
 cat_cols, num_cols, cat_but_car = grab_col_names(df)
-
-df_ = df.copy()
 
 
 
